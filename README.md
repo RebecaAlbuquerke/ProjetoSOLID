@@ -1,5 +1,5 @@
 # ProjetoSOLID
-Esse projeto consiste em um projeto de estudos para mostrar os Principios SOLID sendo aplicados e não aplicados.
+Esse projeto consiste em um projeto de estudos para mostrar os Principios SOLID sendo aplicados e não aplicados. O exemplo apresentado será uma Loja Online, onde terão cadastro de pedidos e produtos, pagamento de pedidos e etc.
 
 ## SRP (Princípio da responsabilidade única)
 Uma classe, um método, um arquivo, um evento só tem uma responsabilidade. A classe não deve adicionar recurso, isso é responsabilidade do repositório. Esse princípio possibilita reaproveitamento de código, testes automatizados, refatoração e menos bugs.
