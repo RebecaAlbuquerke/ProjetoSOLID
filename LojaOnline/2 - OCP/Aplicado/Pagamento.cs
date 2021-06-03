@@ -9,5 +9,10 @@ namespace ProjetoSOLID.OCP.Aplicado
     public abstract class Pagamento
     {
         public abstract double ValorDoPagamento { get; set; }
+
+        public void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento;
+        }
     }
 }

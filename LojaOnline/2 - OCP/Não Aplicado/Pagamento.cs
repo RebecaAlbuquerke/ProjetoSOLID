@@ -8,7 +8,7 @@ namespace ProjetoSOLID.OCP.Não_Aplicado
 {
     public class Pagamento
     {
-        enum TipoDePagamento
+        public enum TipoDePagamento
         {
             CartãoDeCrédito,
             CartãoDeDébito,
@@ -18,32 +18,31 @@ namespace ProjetoSOLID.OCP.Não_Aplicado
 
         public double ValorDoPagamento { get; set; }
 
-        public double ValorDaCompra  { get; set; }
+        public double ValorDaCompra { get; set; }
 
-        public void ReceberPagamento( double valorDoPagamento, double valorDaCompra)
+        public void ReceberPagamento(double valorDoPagamento, double valorDaCompra, TipoDePagamento tipoDePagamento)
         {
             ValorDoPagamento = valorDoPagamento;
             ValorDaCompra = valorDaCompra;
-            var tipoDePagamento = new TipoDePagamento();
             
             if (tipoDePagamento == TipoDePagamento.CartãoDeCrédito)
             {
-                valorDoPagamento = valorDaCompra * 1.1;
+                ValorDoPagamento = valorDaCompra * 1.1;
             }
 
             if (tipoDePagamento == TipoDePagamento.CartãoDeDébito)
             {
-                valorDoPagamento = valorDaCompra * 1.05;
+                ValorDoPagamento = valorDaCompra * 1.05;
             }
 
             if (tipoDePagamento == TipoDePagamento.Boleto)
             {
-                valorDoPagamento = valorDaCompra;
+                ValorDoPagamento = valorDaCompra;
             }
 
             if (tipoDePagamento == TipoDePagamento.Dinheiro)
             {
-                valorDoPagamento = valorDaCompra * 0.95;
+                ValorDoPagamento = valorDaCompra * 0.95;
             }
         }
     }

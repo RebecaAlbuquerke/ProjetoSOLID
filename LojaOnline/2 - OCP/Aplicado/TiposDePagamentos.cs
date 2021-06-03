@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoSOLID.OCP.Aplicado
+namespace ProjetoSOLID._2___OCP.Aplicado
 {
-    public class TipoDePagamentos
+    public class TiposDePagamentos
     {
-        enum TipoDePagamento
+        public enum TipoDePagamento
         {
             CartãoDeCrédito,
             CartãoDeDébito,

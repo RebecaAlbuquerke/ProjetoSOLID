@@ -17,14 +17,13 @@ namespace ProjetoSOLID.LSP.Não_Aplicado
 
         public abstract Tecidos Tecido { get; set; }
 
-        public abstract int Numeração { get; set; }
+        public virtual string[] Tamanho { get; } = new[] { "36", "38", "40", "42", "44" };
 
-        public abstract class CalçaSkinny : Calça
+        public abstract class Blusa : Calça
         {
-            public override Tecidos Tecido
-            {
-                set { Tecido = Tecidos.jeans; }
-            }
+            public override Tecidos Tecido { get; set; }
+
+            public override string[] Tamanho { get; } = new[] { "P", "PP", "M", "G", "GG" };
         }
     }
 }

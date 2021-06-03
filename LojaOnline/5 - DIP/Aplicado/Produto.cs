@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoSOLID.SPR.Aplicado
+namespace ProjetoSOLID._5___DIP.Aplicado
 {
     public class Produto
     {

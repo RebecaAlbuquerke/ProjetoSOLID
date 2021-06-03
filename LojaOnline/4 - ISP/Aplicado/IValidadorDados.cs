@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._4___ISP.Aplicado
 {
-    public interface ICadastroProdutos
+    public interface IValidadorDados
     {
         void ValidarDados();
     }

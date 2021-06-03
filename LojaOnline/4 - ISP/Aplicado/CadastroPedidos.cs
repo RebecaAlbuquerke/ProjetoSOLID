@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._4___ISP.Aplicado
 {
-    public class CadastroPedidos : ICadastroPedidos
+    public class CadastroPedidos : IValidadorPagamento, IValidadorDados
     {
         public void ValidarDados()
         {

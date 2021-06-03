@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoSOLID._4___ISP.Aplicado
+namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    interface ICadastroPedidos
+    interface IEstoqueDosProdutos
     {
-        void ValidarDados();
-
-        void ValidarPagamento();
+        void AdicionarProduto(Produto produto);
     }
 }
