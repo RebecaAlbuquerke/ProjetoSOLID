@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ProjetoSOLID._1___SPR.Aplicado.StatusDoProduto;
 
-namespace ProjetoSOLID.SPR.Aplicado
+namespace ProjetoSOLID._1___SPR.Aplicado
 {
     public class EstoqueDosProdutos
     {
         public int Estoque { get; set; }
 
-        public bool Disponivel { get; set; }
+        public Status StatusDoProduto { get; set; }
 
-        public void DisponibilidadeProduto (int estoque, bool disponivel)
+        public void DisponibilidadeProduto(int estoque)
         {
             Estoque = estoque;
-            Disponivel = disponivel;
 
             if (estoque <= 0)
             {
-                Disponivel = true;
+                StatusDoProduto = Status.Indisponivel;
             }
 
             else
             {
-                Disponivel = false;
+                StatusDoProduto = Status.Disponivel;
             }
         }
     }

@@ -8,16 +8,38 @@ namespace ProjetoSOLID._3___LSP.Aplicado
 {
     public interface IFormaDePagamento
     {
-        double ValorDoPagamento { get; }
+        double ValorDoPagamento { get; set; }
     }
 
     public class PagamentoBoleto : IFormaDePagamento
     {
-        public double ValorDoPagamento => ValorDoPagamento * 1;
+        protected double _ValorDoPagamento;
+
+        public double ValorDoPagamento
+        {
+            get { return _ValorDoPagamento; }
+            set => _ValorDoPagamento = value;
+        }
+
+        public void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento;
+        }
     }
 
-    public abstract class PagamentoDinheiro : IFormaDePagamento
+    public class PagamentoDinheiro : IFormaDePagamento
     {
-        public double ValorDoPagamento => ValorDoPagamento * 0.95;
+        protected double _ValorDoPagamento;
+
+        public double ValorDoPagamento
+        {
+            get { return _ValorDoPagamento; }
+            set => _ValorDoPagamento = value;
+        }
+
+        public void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento * 0.95;
+        }
     }
 }

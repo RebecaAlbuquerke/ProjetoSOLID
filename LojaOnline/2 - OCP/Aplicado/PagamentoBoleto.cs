@@ -21,7 +21,7 @@ namespace ProjetoSOLID.OCP.Aplicado
 
         public int CódigoDoBoleto { get; set; }
 
-        public double CalcularValorDoPagamento(double valorDoPagamento)
+        public override double ReceberPagamento(double valorDoPagamento)
         {
 
             ValorDoPagamento = valorDoPagamento;

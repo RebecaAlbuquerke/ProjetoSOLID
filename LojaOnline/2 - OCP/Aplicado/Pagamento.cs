@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID.OCP.Aplicado
 {
-    public abstract class Pagamento
+    public class Pagamento
     {
-        public abstract double ValorDoPagamento { get; set; }
+        public virtual double ValorDoPagamento { get; set; }
 
-        public void ReceberPagamento(double valorDoPagamento)
+        public virtual double ReceberPagamento(double valorDoPagamento)
         {
             ValorDoPagamento = valorDoPagamento;
+
+            return ValorDoPagamento;
         }
     }
 }

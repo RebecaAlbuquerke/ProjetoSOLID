@@ -20,11 +20,10 @@ namespace ProjetoSOLID.OCP.Não_Aplicado
 
         public double ValorDaCompra { get; set; }
 
-        public void ReceberPagamento(double valorDoPagamento, double valorDaCompra, TipoDePagamento tipoDePagamento)
+        public void ReceberPagamento(double valorDaCompra, TipoDePagamento tipoDePagamento)
         {
-            ValorDoPagamento = valorDoPagamento;
             ValorDaCompra = valorDaCompra;
-            
+
             if (tipoDePagamento == TipoDePagamento.CartãoDeCrédito)
             {
                 ValorDoPagamento = valorDaCompra * 1.1;

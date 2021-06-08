@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._3___LSP.Não_Aplicado
 {
-    public abstract class PagamentoBoleto
+    public class PagamentoBoleto
     {
-        public abstract double ValorDoPagamento { get; set; }
+        public virtual double ValorDoPagamento { get; set; }
+
+        protected double _ValorDoPagamento;
+
+        public virtual void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento;
+        }
     }
 
-    public abstract class PagamentoDinheiro : PagamentoBoleto
+    public class PagamentoDinheiro : PagamentoBoleto
     {
         public override double ValorDoPagamento
         {
-            get { return ValorDoPagamento; }
-            set { ValorDoPagamento = ValorDoPagamento * 0.95; }
+            get { return _ValorDoPagamento; }
+            set => _ValorDoPagamento = value;
+        }
+        
+        public override void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento * 0.95;
         }
     }
 }

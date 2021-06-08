@@ -16,12 +16,27 @@ namespace ProjetoSOLID.SPR.Não_Aplicado
 
         public double Preço { get; set; }
 
-        public Produto(int id, int estoque, string categoria, double preço)
+        public enum Status
         {
-            Id = id;
+            Disponivel,
+            Indisponivel
+        }
+
+        public Status StatusDoProduto { get; set; }
+
+        public void DisponibilidadeProduto(int estoque)
+        {
             Estoque = estoque;
-            Categoria = categoria;
-            Preço = preço;
+
+            if (estoque <= 0)
+            {
+                StatusDoProduto = Status.Indisponivel;
+            }
+
+            else
+            {
+                StatusDoProduto = Status.Disponivel;
+            }
         }
     }
 }
