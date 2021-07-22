@@ -13,12 +13,5 @@ namespace ProjetoSOLID._5___DIP.Não_Aplicado
         public string Categoria { get; set; }
 
         public double Preço { get; set; }
-
-        public Produto(int id, string categoria, double preço)
-        {
-            Id = id;
-            Categoria = categoria;
-            Preço = preço;
-        }
     }
 }
