@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoSOLID.SPR.Aplicado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,21 @@ namespace ProjetoSOLID._1___SPR.Aplicado
 {
     public class EstoqueDosProdutos
     {
-        public int Estoque { get; set; }
-
         public Status StatusDoProduto { get; set; }
 
-        public void DisponibilidadeProduto(int estoque)
-        {
-            Estoque = estoque;
+        public Produto Produto { get; set; }
 
-            if (estoque <= 0)
+        public int Estoque { get; set; }
+
+        public EstoqueDosProdutos(Produto produto, int estoque)
+        {
+            Produto = produto;
+            Estoque = estoque;
+        }
+
+        public void DisponibilidadeProduto()
+        {
+            if (Estoque <= 0)
             {
                 StatusDoProduto = Status.Indisponivel;
             }
@@ -27,5 +34,6 @@ namespace ProjetoSOLID._1___SPR.Aplicado
                 StatusDoProduto = Status.Disponivel;
             }
         }
+
     }
 }

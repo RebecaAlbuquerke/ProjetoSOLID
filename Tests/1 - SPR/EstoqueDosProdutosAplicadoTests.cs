@@ -8,6 +8,7 @@ using FluentAssertions;
 using FluentAssertions.Execution;
 using ProjetoSOLID._1___SPR.Aplicado;
 using static ProjetoSOLID._1___SPR.Aplicado.StatusDoProduto;
+using ProjetoSOLID.SPR.Aplicado;
 
 namespace Tests.SPR
 {
@@ -16,17 +17,38 @@ namespace Tests.SPR
         [Fact]
         public void DeveRetornarDisponivel_QuandoOEstoqueForMaiorQueZero()
         {
-            var sut = new EstoqueDosProdutos();
-            sut.DisponibilidadeProduto(20);
-            sut.StatusDoProduto.Should().Be(Status.Disponivel);
+            //Arrange
+            var produto = new Produto(default, "Laranja", "Fruta", 1.2);
+            var sut = new EstoqueDosProdutos(produto, 20);
+
+            //Act
+            sut.DisponibilidadeProduto();
+
+            //Assert
+            using (var assertionScope = new AssertionScope())
+            {
+                sut.StatusDoProduto.Should().Be(Status.Disponivel);
+                sut.Estoque.Should().Be(20);
+            }
         }
 
         [Fact]
         public void DeveRetornarIndisponivel_QuandoOEstoqueForMenorOuIgualAZero()
         {
-            var sut = new EstoqueDosProdutos();
-            sut.DisponibilidadeProduto(0);
-            sut.StatusDoProduto.Should().Be(Status.Indisponivel);
+            //Arrange
+            var produto = new Produto(default, "Laranja", "Fruta", 1.2);
+            var sut = new EstoqueDosProdutos(produto, 0);
+
+            //Act
+            sut.DisponibilidadeProduto();
+
+            //Assert
+            using (var assertionScope = new AssertionScope())
+            {
+                sut.StatusDoProduto.Should().Be(Status.Indisponivel);
+                sut.Estoque.Should().Be(0);
+            }
         }
+
     }
 }
