@@ -8,9 +8,19 @@ namespace ProjetoSOLID._4___ISP.Aplicado
 {
     public class CadastroProdutos : IValidadorDados
     {
+        public Produto Produto { get; set; }
+
+        public CadastroProdutos(Produto produto)
+        {
+            Produto = produto;
+        }
+
         public void ValidarDados()
         {
-            // Validar dados do produto
+            if (Produto.Id == null && Produto.Id == 0 || Produto.Nome == null || Produto.Categoria == null || Produto.Preco == null && Produto.Preco == 0.0)
+            {
+                throw new Exception("Dados Invalidos");
+            }
         }
     }
 }

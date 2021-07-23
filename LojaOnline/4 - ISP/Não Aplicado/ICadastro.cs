@@ -10,6 +10,6 @@ namespace ProjetoSOLID._4___ISP.Não_Aplicado
     {
         void ValidarDados();
 
-        void ValidarPagamento();
+        void ValidarPagamento(double valorDoPagamento);
     }
 }

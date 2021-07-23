@@ -8,14 +8,32 @@ namespace ProjetoSOLID._4___ISP.Aplicado
 {
     public class CadastroPedidos : IValidadorPagamento, IValidadorDados
     {
+        public int Id { get; set; }
+
+        public Produto Produto { get; set; }
+
+        public double ValorDoPedido { get; set; }
+
+        public CadastroPedidos(int id, Produto produto, double valorDoPedido)
+        {
+            Id = id;
+            Produto = produto;
+            ValorDoPedido = valorDoPedido;
+        }
         public void ValidarDados()
         {
-            // Validar dados do pedido
+            if (Id == null && Id == 0 || Produto == null || ValorDoPedido == null && ValorDoPedido == 0.0)
+            {
+                throw new Exception("Dados Invalidos");
+            }
         }
 
-        public void ValidarPagamento()
+        public void ValidarPagamento(double valorDoPagamento)
         {
-            // Validar pagamento do pedido
+            if (valorDoPagamento < ValorDoPedido)
+            {
+                throw new Exception("Pagemnto Invalido");
+            }
         }
     }
 }

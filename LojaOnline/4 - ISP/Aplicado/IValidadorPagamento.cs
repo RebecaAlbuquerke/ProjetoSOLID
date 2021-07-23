@@ -8,6 +8,6 @@ namespace ProjetoSOLID._4___ISP.Aplicado
 {
     interface IValidadorPagamento
     {
-        void ValidarPagamento();
+        void ValidarPagamento(double valorDoPagamento);
     }
 }
