@@ -10,8 +10,18 @@ namespace ProjetoSOLID._5___DIP.Não_Aplicado
     {
         public int Id { get; set; }
 
+        public string Nome { get; set; }
+
         public string Categoria { get; set; }
 
-        public double Preço { get; set; }
+        public double Preco { get; set; }
+
+        public Produto(int id, string nome, string categoria, double preco)
+        {
+            Id = id;
+            Nome = nome;
+            Categoria = categoria;
+            Preco = preco;
+        }
     }
 }

@@ -9,12 +9,12 @@ namespace ProjetoSOLID._5___DIP.Não_Aplicado
 {
     public class Pedido
     {
-        //public bool ReceberPedido(EstoqueDosProdutos estoque, Produto produto)
-        //{
-        //    foreach (Produto produtos in estoque.ListaDeProdutos)
-        //    {
+        public bool ReceberPedido(EstoqueDosProdutos estoque, Produto produto)
+        {
+            foreach (Produto produtos in estoque.ListaDeProdutos)
+            {
 
-        //    }
-        //}
+           }
+        }
     }
 }
