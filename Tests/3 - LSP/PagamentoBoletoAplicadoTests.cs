@@ -31,9 +31,17 @@ namespace Tests
         [Fact]
         public void ValorDoPagamentoDeveSer475QuandoBoletoDinheiro_50()
         {
-            var sut = new PagamentoDinheiro();
-            sut.ReceberPagamento(50);
-            sut.ValorDoPagamento.Should().Be(47.5);
+            IFormaDePagamento formaDePagamento = new PagamentoDinheiro();
+            formaDePagamento.ReceberPagamento(50);
+            formaDePagamento.ValorDoPagamento.Should().Be(47.5);
+        }
+
+        [Fact]
+        public void ValorDoPagamentoDeveSer50QuandoBoletoDinheiro_50()
+        {
+            IFormaDePagamento formaDePagamento = new PagamentoBoleto();
+            formaDePagamento.ReceberPagamento(50);
+            formaDePagamento.ValorDoPagamento.Should().Be(50);
         }
     }
 }

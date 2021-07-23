@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID.OCP.Aplicado
 {
-    public class Pagamento
+    public abstract class Pagamento
     {
         public virtual double ValorDoPagamento { get; set; }
 

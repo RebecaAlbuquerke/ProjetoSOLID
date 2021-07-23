@@ -9,6 +9,11 @@ namespace ProjetoSOLID._3___LSP.Aplicado
     public interface IFormaDePagamento
     {
         double ValorDoPagamento { get; set; }
+
+        public void ReceberPagamento(double valorDoPagamento)
+        {
+            ValorDoPagamento = valorDoPagamento;
+        }
     }
 
     public class PagamentoBoleto : IFormaDePagamento
