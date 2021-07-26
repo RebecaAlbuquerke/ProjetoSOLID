@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    interface IEstoqueDosProdutos
+    interface IPedido
     {
-        void AdicionarProduto(Produto produto, int id, string categoria, double preço, int estoque);
+        int ReceberPedido(Produto produto, int quantidade);
     }
 }

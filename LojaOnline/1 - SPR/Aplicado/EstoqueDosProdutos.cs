@@ -34,6 +34,5 @@ namespace ProjetoSOLID._1___SPR.Aplicado
                 StatusDoProduto = Status.Disponivel;
             }
         }
-
     }
 }

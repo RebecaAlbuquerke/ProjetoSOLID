@@ -24,8 +24,4 @@
     <ProjectReference Include="..\LojaOnline\ProjetoSOLID.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="5 - DIP\" />
-  </ItemGroup>
-
 </Project>

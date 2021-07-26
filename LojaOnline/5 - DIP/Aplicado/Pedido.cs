@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoSOLID._5___DIP.Não_Aplicado
+namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    public class Pedido
+    public class Pedido : IPedido
     {
         public int ReceberPedido(Produto produto, int quantidade)
         {

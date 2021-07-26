@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Não_Aplicado
 {
-    public class Pedido
+    public class StatusDoProduto
     {
-        public int ReceberPedido(Produto produto, int quantidade)
+        public enum Status
         {
-            var estoqueAtualizado = produto.Estoque - quantidade;
-            return estoqueAtualizado;
+            Disponivel,
+            Indisponivel
         }
     }
 }

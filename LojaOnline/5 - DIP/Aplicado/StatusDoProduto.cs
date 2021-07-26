@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    class CadastroProdutos
+    public class StatusDoProduto
     {
-        public void AdicionarProduto(Produto produto)
+        public enum Status
         {
-            var estoque = new EstoqueDosProdutos();
-            estoque.AdicionarProduto(produto);
+            Disponivel,
+            Indisponivel
         }
     }
 }

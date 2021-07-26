@@ -3,34 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ProjetoSOLID._5___DIP.Aplicado.StatusDoProduto;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
     public class EstoqueDosProdutos : IEstoqueDosProdutos
     {
-        public int Estoque { get; set; }
+        public Status StatusDoProduto { get; set; }
 
-        public bool Disponivel { get; set; }
+        public Produto Produto { get; set; }
 
-        public void AdicionarProduto(Produto produto)
+        public List<Produto> ListaDeProdutos = new List<Produto>();
+
+        public void AdicionarProduto(Produto produto, int id, string categoria, double preço, int estoque)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DisponibilidadeProduto(int estoque, bool disponivel)
-        {
-            Estoque = estoque;
-            Disponivel = disponivel;
-
-            if (estoque <= 0)
-            {
-                Disponivel = true;
-            }
-
-            else
-            {
-                Disponivel = false;
-            }
+            produto.Id = id;
+            produto.Categoria = categoria;
+            produto.Preço = preço;
+            produto.Estoque = estoque;
+            ListaDeProdutos.Add(new Produto(id, categoria, preço, estoque) { });
         }
     }
 }
