@@ -14,14 +14,11 @@ namespace ProjetoSOLID._5___DIP.Não_Aplicado
 
         public double Preço { get; set; }
 
-        public int Estoque { get; set; }
-
-        public Produto(int id, string categoria, double preço, int estoque)
+        public Produto(int id, string categoria, double preço)
         {
             Id = id;
             Categoria = categoria;
             Preço = preço;
-            Estoque = estoque;
         }
     }
 }

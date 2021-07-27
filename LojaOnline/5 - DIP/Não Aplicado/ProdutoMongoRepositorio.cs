@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Não_Aplicado
 {
-    public class Pedido
+    public class ProdutoMongoRepositorio : IRepositorio<Produto>
     {
-        public int ReceberPedido(Produto produto, int quantidade)
+        public Produto ObterId(int id)
         {
-            var estoqueAtualizado = produto.Estoque - quantidade;
-            return estoqueAtualizado;
+            return new Produto(id, "vestuario", 10.0);
         }
     }
 }

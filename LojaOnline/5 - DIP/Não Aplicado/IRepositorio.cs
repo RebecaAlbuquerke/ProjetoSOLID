@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Não_Aplicado
 {
-    public class StatusDoProduto
+    public interface IRepositorio<T>
     {
-        public enum Status
-        {
-            Disponivel,
-            Indisponivel
-        }
+        T ObterId(int id);
     }
 }

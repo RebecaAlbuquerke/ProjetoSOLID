@@ -9,24 +9,19 @@ namespace ProjetoSOLID._5___DIP.Não_Aplicado
 {
     public class EstoqueDosProdutos
     {
-        public Status StatusDoProduto { get; set; }
+        public List<Produto> ListaDeProdutos { get; set; }
+        public ProdutoMongoRepositorio Repositorio { get; set; }
 
-        public Produto Produto { get; set; }
-
-        public List<Produto> ListaDeProdutos = new List<Produto>();
-
-        public void ListarProdutos(List<Produto> listaDeProdutos)
+        public EstoqueDosProdutos()
         {
-            ListaDeProdutos = listaDeProdutos;
+            ListaDeProdutos = new List<Produto>();
+            Repositorio = new ProdutoMongoRepositorio();
         }
 
-        public void AdicionarProduto(Produto produto, int id, string categoria, double preço, int estoque)
+        public void AdicionarProduto(int id)
         {
-            produto.Id = id;
-            produto.Categoria = categoria;
-            produto.Preço = preço;
-            produto.Estoque = estoque;
-            ListaDeProdutos.Add(new Produto(id, categoria, preço, estoque) { });
+            var produto = Repositorio.ObterId(id);
+            ListaDeProdutos.Add(produto);
         }
     }
 }

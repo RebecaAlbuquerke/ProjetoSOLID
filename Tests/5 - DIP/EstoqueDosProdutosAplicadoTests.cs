@@ -14,10 +14,8 @@ namespace Tests._5___DIP
         [Fact]
         public void AdicionarProduto()
         {
-            var produto = new Produto(01, "vestuario", 10.0, 20);
-            var sut = new EstoqueDosProdutos();
-            sut.AdicionarProduto(produto, produto.Id, produto.Categoria, produto.Preço, produto.Estoque);
-            sut.ListaDeProdutos.Should().Contain(produto);
+            var repositorio = new ProdutoPostgreSQLRepositorio();
+            var estoqueDeProduto = new EstoqueDosProdutos(repositorio);
         }
     }
 }

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    public class StatusDoProduto
+    public class ProdutoPostgreSQLRepositorio : IRepositorio<Produto>
     {
-        public enum Status
+        public Produto ObterId(int id)
         {
-            Disponivel,
-            Indisponivel
+            return new Produto(id, "vestuario", 10.0);
         }
     }
 }

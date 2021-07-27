@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    interface IPedido
+    public interface IRepositorio<T>
     {
-        int ReceberPedido(Produto produto, int quantidade);
+        T ObterId(int id);
     }
 }

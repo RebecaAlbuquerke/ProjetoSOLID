@@ -1,27 +1,27 @@
-﻿using System;
+﻿using ProjetoSOLID._5___DIP.Não_Aplicado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjetoSOLID._5___DIP.Aplicado.StatusDoProduto;
 
 namespace ProjetoSOLID._5___DIP.Aplicado
 {
-    public class EstoqueDosProdutos : IEstoqueDosProdutos
+    public class EstoqueDosProdutos
     {
-        public Status StatusDoProduto { get; set; }
+        public List<Produto> ListaDeProdutos { get; set; }
+        public IRepositorio<Produto> Repositorio { get; set; }
 
-        public Produto Produto { get; set; }
-
-        public List<Produto> ListaDeProdutos = new List<Produto>();
-
-        public void AdicionarProduto(Produto produto, int id, string categoria, double preço, int estoque)
+        public EstoqueDosProdutos(IRepositorio<Produto> repositorio)
         {
-            produto.Id = id;
-            produto.Categoria = categoria;
-            produto.Preço = preço;
-            produto.Estoque = estoque;
-            ListaDeProdutos.Add(new Produto(id, categoria, preço, estoque) { });
+            ListaDeProdutos = new List<Produto>();
+            Repositorio = repositorio;
+        }
+
+        public void AdicionarProduto(int id)
+        {
+            var produto = Repositorio.ObterId(id);
+            ListaDeProdutos.Add(produto);
         }
     }
 }
